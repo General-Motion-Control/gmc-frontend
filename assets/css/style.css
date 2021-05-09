@@ -140,7 +140,7 @@ h6 {
 
 #header .logo-text {
   color: #00acdd;
-  display: inline;
+  margin: 0 !important;
 }
 
 /*--------------------------------------------------------------
