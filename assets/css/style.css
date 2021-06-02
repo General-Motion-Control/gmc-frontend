@@ -458,13 +458,18 @@ h6 {
 
 #hero .icon-box .icon {
   margin-bottom: 20px;
-  padding-top: 10px;
   display: inline-block;
   text-align: center;
   transition: all 0.3s ease-in-out;
   font-size: 36px;
   line-height: 1;
   color: #2487ce;
+}
+
+#hero .icon-box .icon svg {
+  fill: #2487ce;
+  height: 128px;
+  width: 128px;
 }
 
 #hero .icon-box:hover {

@@ -20,6 +20,10 @@
     <!-- Font Awesome-->
     <script src="https://kit.fontawesome.com/27cc9af950.js" crossorigin="anonymous"></script>
 
+    <!-- SVG 4 Everybody setup -->
+    <script src="./assets/vendor/svg4everybody/svg4everybody.min.js"></script>
+    <script>svg4everybody();</script>
+
     <!-- Vendor CSS Files -->
     <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <link href="assets/vendor/owl.carousel/assets/owl.carousel.min.css" rel="stylesheet">
@@ -34,7 +38,7 @@
         <div class="container-fluid d-flex align-items-center">
             <a href="index.html" class="logo mr-auto d-flex align-items-center">
                 <img src="assets/images/common/logo.png" alt="gmc" class="img-fluid">
-                <span class="logo-text h1">General Motion Control</span>
+                <span class="logo-text h1 d-none d-md-block">General Motion Control</span>
             </a>
             <nav class="nav-menu d-none d-lg-block">
                 <ul>
@@ -64,12 +68,11 @@
             <div class="row icon-boxes">
                 <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0" data-aos="zoom-in"
                     data-aos-delay="300">
-                    <div class="icon-box">
-                        <div class="icon d-flex align-items-center">
-                            <span class="fa-layers fa-fw">
-                                <i class="fas fa-desktop fa-2x"></i>
-                                <span class="fa-layers-text" data-fa-transform="shrink-1 right-7.5 up-2.5">IOT</span>
-                            </span>
+                    <div class="icon-box d-flex flex-column align-items-center">
+                        <div class="icon">
+                            <svg title="Remote Monitoring">
+                                <use xlink:href="./assets/img/svgs/home-page.svg#remote-monitoring"></use>
+                            </svg>
                         </div>
                         <h4 class="title"><a href="javascript:void(0);">Remote Monitoring & Assistance</a></h4>
                         <p class="description">Control system dedicated to data collection and remote monitoring,
@@ -79,8 +82,12 @@
 
                 <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0" data-aos="zoom-in"
                     data-aos-delay="300">
-                    <div class="icon-box">
-                        <div class="icon"><i class="ri-palette-line"></i></div>
+                    <div class="icon-box d-flex flex-column align-items-center">
+                        <div class="icon">
+                            <svg title="Techincal Support">
+                                <use xlink:href="./assets/img/svgs/home-page.svg#technical-support"></use>
+                            </svg>
+                        </div>
                         <h4 class="title"><a href="javascript:void(0);">Production Assistance</a></h4>
                         <p class="description">Understanding clients requirnments for acheiving higher production with
                             precision and minimal downtime</p>
@@ -89,8 +96,12 @@
 
                 <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0" data-aos="zoom-in"
                     data-aos-delay="300">
-                    <div class="icon-box">
-                        <div class="icon"><i class="ri-command-line"></i></div>
+                    <div class="icon-box d-flex flex-column align-items-center">
+                        <div class="icon">
+                            <svg title="Motion Robotics">
+                                <use xlink:href="./assets/img/svgs/home-page.svg#motion-robotics"></use>
+                            </svg>
+                        </div>
                         <h4 class="title"><a href="javascript:void(0);">Motion & Robotics</a></h4>
                         <p class="description">Solution for motion control, cyclic synchronization of axis and
                             management of complex movement</p>
@@ -99,8 +110,12 @@
 
                 <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0" data-aos="zoom-in"
                     data-aos-delay="300">
-                    <div class="icon-box">
-                        <div class="icon"><i class="ri-fingerprint-line"></i></div>
+                    <div class="icon-box d-flex flex-column align-items-center">
+                        <div class="icon">
+                            <svg title="Machine Tools">
+                                <use xlink:href="./assets/img/svgs/home-page.svg#machine-tools"></use>
+                            </svg>
+                        </div>
                         <h4 class="title"><a href="javascript:void(0);">Machine Tools</a></h4>
                         <p class="description">System for the control mythology to get the precise mechanical job</p>
                     </div>
@@ -124,12 +139,21 @@
                 <div class="row content">
                     <div class="col-lg-6">
                         <p>
-                            General Motion Control is probably known as GMC. Deliver the right product, service, and support at ever reducing cost. Our aim [goal] is to steadily and consistently enlarge our earning base created on our strong track record for more than decades of Industrial experience of our chairman. by identifying the right partner, key business process, investment in resources, and the most important to implement the right strategy to market the products and services in the growing Industrial sectors like Textile, Plastic, Machine tool, etc.
+                            General Motion Control is probably known as GMC. Deliver the right product, service, and
+                            support at ever reducing cost. Our aim [goal] is to steadily and consistently enlarge our
+                            earning base created on our strong track record for more than decades of Industrial
+                            experience of our chairman. by identifying the right partner, key business process,
+                            investment in resources, and the most important to implement the right strategy to market
+                            the products and services in the growing Industrial sectors like Textile, Plastic, Machine
+                            tool, etc.
                         </p>
                     </div>
                     <div class="col-lg-6 pt-4 pt-lg-0">
                         <p>
-                            These businesses are focused on solving our customers’ most complex challenges with differentiated technology solutions. Our Strength enables our clients to realize optimum power from the World Class Technologies & Automation products to achieve the best growth for the companies and in turn growth for the nation & the society.
+                            These businesses are focused on solving our customers’ most complex challenges with
+                            differentiated technology solutions. Our Strength enables our clients to realize optimum
+                            power from the World Class Technologies & Automation products to achieve the best growth for
+                            the companies and in turn growth for the nation & the society.
                         </p>
                     </div>
                 </div>
@@ -164,7 +188,9 @@
 
                 <div class="section-title">
                     <h2>Services</h2>
-                    <p>We provide total technical back up including application supports, product selection, installation & Commissioning, and after-sales service of the complete range of product marketed by us</p>
+                    <p>We provide total technical back up including application supports, product selection,
+                        installation & Commissioning, and after-sales service of the complete range of product marketed
+                        by us</p>
                 </div>
 
                 <div class="row">
@@ -445,7 +471,8 @@
                             <div class="address">
                                 <i class="icofont-google-map"></i>
                                 <h4>Location:</h4>
-                                <p>A-311, Safal Sumel-8, Ajit Mill char rasta, Rakhiyal, Ahmedabad-380023, Gujarat, India</p>
+                                <p>A-311, Safal Sumel-8, Ajit Mill char rasta, Rakhiyal, Ahmedabad-380023, Gujarat,
+                                    India</p>
                             </div>
 
                             <div class="email">
