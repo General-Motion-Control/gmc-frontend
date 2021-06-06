@@ -35,7 +35,9 @@
 
         if ($('body').hasClass('mobile-nav-active')) {
           $('body').removeClass('mobile-nav-active');
-          $('.mobile-nav-toggle').find('[data-fa-i2svg]').toggleClass('fa-times fa-bars');
+          const mobileNavToggle = $('.mobile-nav-toggle');
+          mobileNavToggle.find('#mobile-menu-svg').toggleClass('d-none');
+          mobileNavToggle.find('#mobile-menu-close-svg').toggleClass('d-none');
           $('.mobile-nav-overly').fadeOut();
         }
         return false;
@@ -63,12 +65,13 @@
       class: 'mobile-nav d-lg-none'
     });
     $('body').append($mobile_nav);
-    $('body').prepend('<button type="button" class="mobile-nav-toggle d-lg-none"><i class="fas fa-bars primary-icon-color fa-lg"></i></button>');
     $('body').append('<div class="mobile-nav-overly"></div>');
 
     $(document).on('click', '.mobile-nav-toggle', function (e) {
       $('body').toggleClass('mobile-nav-active');
-      $('.mobile-nav-toggle').find('[data-fa-i2svg]').toggleClass('fa-times fa-bars');
+      const mobileNavToggle = $('.mobile-nav-toggle');
+      mobileNavToggle.find('#mobile-menu-svg').toggleClass('d-none');
+      mobileNavToggle.find('#mobile-menu-close-svg').toggleClass('d-none');
       $('.mobile-nav-overly').toggle();
     });
 
@@ -83,7 +86,9 @@
       if (!container.is(e.target) && container.has(e.target).length === 0) {
         if ($('body').hasClass('mobile-nav-active')) {
           $('body').removeClass('mobile-nav-active');
-          $('.mobile-nav-toggle').find('[data-fa-i2svg]').toggleClass('fa-times fa-bars');
+          const mobileNavToggle = $('.mobile-nav-toggle');
+          mobileNavToggle.find('#mobile-menu-svg').toggleClass('d-none');
+          mobileNavToggle.find('#mobile-menu-close-svg').toggleClass('d-none');
           $('.mobile-nav-overly').fadeOut();
         }
       }

@@ -17,9 +17,6 @@
         href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
         rel="stylesheet">
 
-    <!-- Font Awesome-->
-    <script src="https://kit.fontawesome.com/27cc9af950.js" crossorigin="anonymous"></script>
-
     <!-- SVG 4 Everybody setup -->
     <script src="./assets/vendor/svg4everybody/svg4everybody.min.js"></script>
     <script>svg4everybody();</script>
@@ -33,6 +30,14 @@
 </head>
 
 <body>
+    <div class="mobile-nav-toggle d-lg-none">
+        <svg title="Menu" id="mobile-menu-svg">
+            <use xlink:href="./assets/img/svgs/home-page.svg#menu"></use>
+        </svg>
+        <svg title="Menu Close" id="mobile-menu-close-svg" class="d-none">
+            <use xlink:href="./assets/img/svgs/home-page.svg#menu-close"></use>
+        </svg>
+    </div>
     <!-- ======= Header ======= -->
     <header id="header" class="fixed-top">
         <div class="container-fluid d-flex align-items-center">

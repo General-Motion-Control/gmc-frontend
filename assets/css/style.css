@@ -257,30 +257,34 @@ h6 {
 /* Mobile Navigation */
 .mobile-nav-toggle {
   position: fixed;
-  right: 15px;
-  top: 18px;
-  z-index: 9998;
-  border: 0;
-  background: none;
-  font-size: 24px;
+  top: 30px;
+  right: 30px;
   transition: all 0.4s;
-  outline: none !important;
-  line-height: 1;
   cursor: pointer;
-  text-align: right;
+  z-index: 9999;
 }
 
-.mobile-nav-toggle i {
-  color: #124265;
+
+.mobile-nav-toggle svg {
+  width: 40px;
+  height: 40px;
+}
+
+.mobile-nav-toggle #mobile-menu-svg{
+  fill: #124265;
+}
+
+.mobile-nav-toggle #mobile-menu-close-svg{
+  fill: #fff;
 }
 
 .mobile-nav {
   position: fixed;
-  top: 55px;
+  top: 80px;
   right: 15px;
   bottom: 15px;
-  left: 15px;
-  z-index: 9999;
+  width: 45%;
+  z-index: 9998;
   overflow-y: auto;
   background: #fff;
   transition: ease-in-out 0.2s;
@@ -288,6 +292,12 @@ h6 {
   visibility: hidden;
   border-radius: 10px;
   padding: 10px 0;
+}
+
+@media (max-width: 500px) {
+  .mobile-nav {
+    width: 90%;
+  }
 }
 
 .mobile-nav * {
@@ -355,10 +365,6 @@ h6 {
 .mobile-nav-active .mobile-nav {
   opacity: 1;
   visibility: visible;
-}
-
-.mobile-nav-active .mobile-nav-toggle i {
-  color: #fff;
 }
 
 /*--------------------------------------------------------------
