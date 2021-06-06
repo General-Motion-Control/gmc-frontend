@@ -1404,23 +1404,19 @@ section {
   color: #444444;
 }
 
-#footer .social-links a {
+#footer .social-links svg {
   font-size: 18px;
   display: inline-block;
   background: #2487ce;
-  color: #fff;
-  line-height: 1;
+  fill: #fff;
   padding: 8px 0;
   margin-right: 4px;
   border-radius: 5px;
-  text-align: center;
   width: 36px;
   height: 36px;
   transition: 0.3s;
 }
 
-#footer .social-links a:hover {
+#footer .social-links svg:hover {
   background: #3194db;
-  color: #fff;
-  text-decoration: none;
 }
