@@ -35,7 +35,7 @@
 
         if ($('body').hasClass('mobile-nav-active')) {
           $('body').removeClass('mobile-nav-active');
-          const mobileNavToggle = $('.mobile-nav-toggle');
+          var mobileNavToggle = $('.mobile-nav-toggle');
           mobileNavToggle.find('#mobile-menu-svg').toggleClass('d-none');
           mobileNavToggle.find('#mobile-menu-close-svg').toggleClass('d-none');
           $('.mobile-nav-overly').fadeOut();
@@ -47,7 +47,6 @@
 
   // Activate smooth scroll on page load with hash links in the url
   $(document).ready(function () {
-    console.log(window.location.hash);
     if (window.location.hash) {
       var initial_nav = window.location.hash;
       if ($(initial_nav).length) {
@@ -69,7 +68,7 @@
 
     $(document).on('click', '.mobile-nav-toggle', function (e) {
       $('body').toggleClass('mobile-nav-active');
-      const mobileNavToggle = $('.mobile-nav-toggle');
+      var mobileNavToggle = $('.mobile-nav-toggle');
       mobileNavToggle.find('#mobile-menu-svg').toggleClass('d-none');
       mobileNavToggle.find('#mobile-menu-close-svg').toggleClass('d-none');
       $('.mobile-nav-overly').toggle();
@@ -86,7 +85,7 @@
       if (!container.is(e.target) && container.has(e.target).length === 0) {
         if ($('body').hasClass('mobile-nav-active')) {
           $('body').removeClass('mobile-nav-active');
-          const mobileNavToggle = $('.mobile-nav-toggle');
+          var mobileNavToggle = $('.mobile-nav-toggle');
           mobileNavToggle.find('#mobile-menu-svg').toggleClass('d-none');
           mobileNavToggle.find('#mobile-menu-close-svg').toggleClass('d-none');
           $('.mobile-nav-overly').fadeOut();
