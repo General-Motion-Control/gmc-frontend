@@ -1,3 +1,34 @@
+const contactUsFormApi = 'https://script.google.com/macros/s/AKfycbz_pE7ZI8-G4dcEItyLMdCn5kfEbN4SOt3-at45tSZGEaD7R3Y8e3wu5HrodgvTn7M/exec';
+const COLOR_CODES = {
+  SUCESS_DARK: '#007E33',
+  DANGER_DARK: '#CC0000',
+  WARNING_DARK: '#FF8800',
+  INFO_DARK: '#0099CC',
+  WHITE: 'white',
+};
+
+const TOAST_TYPES = {
+  SUCCESS: 'success',
+  DANGER: 'danger',
+  INFO: 'info',
+  DANGER: 'danger',
+}
+
+const TOAST_OPTIONS = {
+  [TOAST_TYPES.SUCCESS]: {
+    bgColor: COLOR_CODES.SUCESS_DARK,
+  },
+  [TOAST_TYPES.DANGER]: {
+    bgColor: COLOR_CODES.DANGER_DARK,
+  },
+  COMMON: {
+    textColor: COLOR_CODES.WHITE,
+    position: 'bottom-left',
+    loader: false,
+    hideAfter: 5000,
+  }
+}
+
 !(function ($) {
   "use strict";
 
@@ -8,6 +39,36 @@
         $(this).remove();
       });
     }
+  });
+
+  // contact us form
+  $(document).on('submit', '.contact-email-form', function() {
+    const contactUsForm = $(this);
+
+    // disable all form's inputs
+    const formInputs = contactUsForm.find(':input');
+    formInputs.prop('disabled', true);
+
+    // convert form data to json
+    const formData = getFormDataToJson(contactUsForm);
+
+    // send details to API
+    $.post(contactUsFormApi, JSON.stringify(formData), 'json')
+      .done(function(data) {
+        // reset form data
+        contactUsForm.trigger("reset");
+  
+        // enable all forms inputs
+        formInputs.prop('disabled', false);
+
+        if (data.isError) {
+          return sendToast(data.message, TOAST_TYPES.DANGER);
+        }
+        return sendToast('We received your response.<br/>We will contact you soon. Thanks!', TOAST_TYPES.SUCCESS);
+      })
+      .fail(function(error) {
+        console.log(error);
+      });
   });
 
   // Smooth scroll for the navigation menu and links with .scrollto classes
@@ -186,3 +247,16 @@
   });
 
 })(jQuery);
+
+function getFormDataToJson(form) {
+  const formArrayData = form.serializeArray();
+  return formArrayData.reduce((formData, formEle) => {
+    formData[formEle.name] = formEle.value;
+    return formData;
+  }, {});
+}
+
+function sendToast(text, type) {
+  const options = Object.assign({}, TOAST_OPTIONS.COMMON, TOAST_OPTIONS[type] || {}, { text: '<b>'+ text +'</b>' });
+  $.toast(options);
+}
